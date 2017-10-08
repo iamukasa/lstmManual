@@ -60,7 +60,7 @@
 
 
 
-</form>
+    </form>
 </div>
 
 <div class="progress">
@@ -76,9 +76,20 @@
     </div>
 </div>
 
+<form action="/summarise" method="post" id="enteringsum">
+    <p>Summarise large body of text</p>
+    <div class="form-group mine">
+        <textarea class="form-control" type="text" id="entertextsum" name="entertextsum" placeholder="Text to learn from"></textarea>
+        <button type="submit" href="/generate" class="btn btn-primary" id="generatesum" name="generate">Summarise</button>
+     </div>
 {% block content%}
 
 {% endblock %}
+
+
+
+
+
 <!-- js -->
 
 

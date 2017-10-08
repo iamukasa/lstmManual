@@ -2,6 +2,7 @@ from string import punctuation
 
 import nltk
 from nltk.corpus import stopwords
+from nltk import defaultdict
 import heapq
 import sys
 
@@ -14,7 +15,7 @@ class FrequencySummariser:
                             list(punctuation)+
                             [u"'s",'""'])
     def _compute_frequencies(self,word_sent,customStopWords=None):
-        freq= nltk.defaultdict(int)
+        freq= defaultdict(int)
         if customStopWords is None:
             stopwords=set(self._stopwords)
         else:
@@ -34,7 +35,7 @@ class FrequencySummariser:
         sentences= nltk.sent_tokenize(article)
         word_sent=[nltk.word_tokenize(s.lower()) for s in sentences]
         self._freq=self._compute_frequencies(word_sent)
-        ranking= nltk.defaultdict[int]
+        ranking= nltk.defaultdict(int)
         for i,sentence in enumerate(word_sent):
             for word in sentence:
                 if word in self._freq:
@@ -46,7 +47,3 @@ class FrequencySummariser:
 
 
 
-textpath = str("/home/iamukasa/PycharmProjects/LtsmManual/src/copora/hamilton.txt")
-logs = open(textpath, "r").read()
-
-print FrequencySummariser().summarize(logs,4)
