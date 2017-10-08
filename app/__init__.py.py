@@ -29,4 +29,4 @@ def runai():
 
 
 if __name__ == '__main__':
-     app.run(port=3040)
+     app.run()
