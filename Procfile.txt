@@ -1,2 +1,0 @@
-web:python app/__init__py.py runserver
-heroku ps:scale web=1
