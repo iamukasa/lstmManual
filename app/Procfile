@@ -1,1 +1,2 @@
 web: gunicorn app:app -log-file=-
+ps:scale web=1
