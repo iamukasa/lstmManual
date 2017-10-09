@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
+@app.route('home')
 def startdis():
   return render_template("base.html")
 
