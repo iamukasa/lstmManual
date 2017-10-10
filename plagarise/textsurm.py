@@ -32,6 +32,7 @@ class FrequencySummariser:
         return freq
 
     def summarize(self,article,n):
+        answers=""
         sentences= nltk.sent_tokenize(article)
         word_sent=[nltk.word_tokenize(s.lower()) for s in sentences]
         self._freq=self._compute_frequencies(word_sent)
@@ -43,7 +44,12 @@ class FrequencySummariser:
 
 
         sentences_index=heapq.nlargest(n,ranking,key=ranking.get)
-        return [sentences[j] for j in sentences_index]
+
+        for j in sentences_index:
+
+            answers+=" "+sentences[j]
+
+        return answers
 
 
 
