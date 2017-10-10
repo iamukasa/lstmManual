@@ -30,6 +30,7 @@ def runaitwo():
 
     return render_template("maintwo.html",thesummarised=thesummarised)
 
-# if __name__ == '__main__':
-#     app.run(port=3138)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', debug=True)
+
 
